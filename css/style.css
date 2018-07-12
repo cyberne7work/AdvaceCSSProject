@@ -1,0 +1,188 @@
+/* * is used to remove the margine and the padding from all alemets given by the browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato",sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+.header {
+    height: 95vh;
+    background-image:linear-gradient(to right bottom
+    ,rgba(126, 213, 111, 0.6)
+    ,rgba(40, 180, 131, 0.4))
+     ,url("https://scontent.fdel8-1.fna.fbcdn.net/v/t31.0-8/26758560_526752801029674_1146590675052631606_o.jpg?_nc_cat=0&oh=440c4c4651d748f8d6e168ee7b345151&oe=5BCEDB52&efg=eyJhZG1pc3Npb25fY29udHJvbCI6MSwidXBsb2FkZXJfaWQiOiIxMDAwMTA4NDg3NTQwMTQifQ%3D%3D");
+    background-size: cover;
+    background-position: bottom;
+    /* it used to shape the header */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh,0 100%);
+    /* it specify the that .... */
+    position: relative;
+}
+.logo-box{
+   position: absolute;
+   top: 10px;
+   left: 10px;
+}
+.logo{
+    height: 200px;
+
+}
+.logo:hover{
+    /* animation: moveToRight 1s ease-out; */
+}
+/* to center the Element */
+.text-box{
+    position: absolute;
+    /* it move the element from top */
+    top:40%;
+    /* it move the element from left side */
+    left: 50%;
+    /* it move to element from x and y axis */
+    transform:translate(-50%,-50%);
+    text-align: center;
+}
+.heading-primary{
+
+        color: #fff;
+        text-transform: uppercase;
+        backface-visibility: hidden;
+        margin-bottom: 50px;
+
+}
+.heading-primary-main{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing:40px;
+    /* it specify thw type of animal element gonna use */
+    animation-name: moveInLeft;
+    /* it specify the duration of the animation */
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+
+
+    /* it specify the time after animation gets start
+    animation-delay: 1s;
+    /* it is used to specify the number of time animation to be done 
+    animation-iteration-count: 3; */
+
+}
+.heading-primary-sub{
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 10px;
+    animation-name: moveToRight;
+    animation-duration: 1s;
+    /* animation-delay: 1s; */
+    animation-timing-function: ease-in;
+}
+
+@keyframes moveInLeft{
+    /* When Animation Start (Initial Stage) */
+    0%{
+        opacity: 0;
+        /* use to animated in given direction */
+        transform: translateX(-100px);
+    }
+    60%{
+        /* transform: rotate(95deg) */
+    }
+    80%{
+        /* it helps to  */
+        transform: translate(10px);
+
+    }
+
+    100%{
+        /* opacity is used to transparent the elemt */
+        opacity: 1;
+        transform: translate(0);
+
+
+    }
+
+}
+/* it is used to create the animation which is also used by the other elemts */
+@keyframes moveToRight{
+    0%{
+        opacity: 0;
+        transform: translate(-100px);
+
+    }
+    80%{
+        
+
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+
+    }
+}
+/* link is a button selector  linke hover both link and visited because it doesn't cahnge clor after click*/
+.btn:link,
+.btn:visited {
+    /* 15 px is for top and bottom 40px is for left and right */
+padding:15px 40px;
+text-transform: uppercase;
+/* Text decoration is used to style the element */
+text-decoration: none;
+/* display inline-block is used to center the elment with A seperate space */
+display: inline-block;
+/* to enable all animation property */
+transition: all 0.2s;
+position: relative;
+
+}
+.btn:hover{
+    /* transalte Y is used to moved to elements up or down side */
+    transform: translateY(-3px);
+    box-shadow: #777;
+    /* 20 px is for blurr propertie */
+    box-shadow: 0 10px 20px rgba( 0, 0, 0, .2);
+}
+/* :active is for ....when we click on the button */
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba( 0, 0, 0,.2);
+}
+.btn-white{
+   color: #777;
+    background-color: #fff;
+    border-radius: 200px;
+}
+/* button animation */
+/* persudo element */
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+
+}
+.btn-white::after{
+    
+     background-color: #fff;
+     
+ }
+ .btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+
+ }
+ 
