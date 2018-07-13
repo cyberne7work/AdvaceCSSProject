@@ -39,6 +39,14 @@ html{
 }
 .header__logo{
     height: 20rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    text-decoration: none;
+
+
 
 }
 .logo:hover{
