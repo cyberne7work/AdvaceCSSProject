@@ -18,6 +18,7 @@ body {
 }
 html{
     font-size: 62.5%;
+   
 }
 .header {
     height: 95vh;
@@ -201,7 +202,7 @@ font-size: 1.6rem;
     transition: all .4s;
 
 }
-.btn-white::after{
+.btn--white::after{
     
      background-color: #fff;
      
