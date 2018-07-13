@@ -1,8 +1,10 @@
 /* * is used to remove the margine and the padding from all alemets given by the browsers */
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
 body {
@@ -12,6 +14,10 @@ body {
     line-height: 1.7;
     color: #777;
     padding: 30px;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
 }
 .header {
     height: 95vh;
@@ -26,20 +32,20 @@ body {
     /* it specify the that .... */
     position: relative;
 }
-.logo-box{
+.header__logo-box{
    position: absolute;
-   top: 10px;
-   left: 10px;
+   top: 1rem;
+   left: 1rem;
 }
-.logo{
-    height: 200px;
+.header__logo{
+    height: 20rem;
 
 }
 .logo:hover{
     /* animation: moveToRight 1s ease-out; */
 }
 /* to center the Element */
-.text-box{
+.header__text-box{
     position: absolute;
     /* it move the element from top */
     top:40%;
@@ -54,14 +60,14 @@ body {
         color: #fff;
         text-transform: uppercase;
         backface-visibility: hidden;
-        margin-bottom: 50px;
+        margin-bottom: 5rem;
 
 }
-.heading-primary-main{
+.heading-primary--main{
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing:40px;
+    letter-spacing:4rem;
     /* it specify thw type of animal element gonna use */
     animation-name: moveInLeft;
     /* it specify the duration of the animation */
@@ -75,11 +81,11 @@ body {
     animation-iteration-count: 3; */
 
 }
-.heading-primary-sub{
+.heading-primary--sub{
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 400;
-    letter-spacing: 10px;
+    letter-spacing: 1rem;
     animation-name: moveToRight;
     animation-duration: 1s;
     /* animation-delay: 1s; */
@@ -91,14 +97,14 @@ body {
     0%{
         opacity: 0;
         /* use to animated in given direction */
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
     60%{
         /* transform: rotate(95deg) */
     }
     80%{
         /* it helps to  */
-        transform: translate(10px);
+        transform: translate(1rem);
 
     }
 
@@ -115,7 +121,7 @@ body {
 @keyframes moveToRight{
     0%{
         opacity: 0;
-        transform: translate(-100px);
+        transform: translate(-10rem);
 
     }
     80%{
@@ -128,11 +134,22 @@ body {
 
     }
 }
+@keyframes moveToBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(3rem);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0)
+    }
+}
 /* link is a button selector  linke hover both link and visited because it doesn't cahnge clor after click*/
 .btn:link,
 .btn:visited {
     /* 15 px is for top and bottom 40px is for left and right */
-padding:15px 40px;
+padding:1.5rem 4rem;
 text-transform: uppercase;
 /* Text decoration is used to style the element */
 text-decoration: none;
@@ -141,6 +158,7 @@ display: inline-block;
 /* to enable all animation property */
 transition: all 0.2s;
 position: relative;
+font-size: 1.6rem;
 
 }
 .btn:hover{
@@ -148,17 +166,17 @@ position: relative;
     transform: translateY(-3px);
     box-shadow: #777;
     /* 20 px is for blurr propertie */
-    box-shadow: 0 10px 20px rgba( 0, 0, 0, .2);
+    box-shadow: 0 1rem 2rem rgba( 0, 0, 0, .2);
 }
 /* :active is for ....when we click on the button */
 .btn:active{
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba( 0, 0, 0,.2);
+    box-shadow: 0 .5rem 1rem rgba( 0, 0, 0,.2);
 }
-.btn-white{
+.btn--white{
    color: #777;
     background-color: #fff;
-    border-radius: 200px;
+    border-radius: 2rem;
 }
 /* button animation */
 /* persudo element */
@@ -167,7 +185,7 @@ position: relative;
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -184,5 +202,9 @@ position: relative;
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
 
+ }
+ .btn--animated{
+     animation: moveToBottom .5s ease-out .75s;
+     animation-fill-mode: backwards;
  }
  
